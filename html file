@@ -1,0 +1,289 @@
+<html>
+<head>
+  <title>
+    WIRN consolidator
+  </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">WIRN consolidator</a>
+      </div>
+
+      <div class="collapse navbar-collapse">
+        <form class="navbar-form navbar-left" role="search" onsubmit:"return false">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search" id="searchBar">
+          </div>
+          <button type="submit" class="btn btn-default" id="searchFunction">Submit</button>
+        </form>
+      </div><!-- .navbar-collapse -->
+    </div><!-- .container-fluid -->
+  </nav>
+</header>
+<div class="page-header">
+  <center><h1 id="shareholderID">Shareholder Calls</h1></center>
+</div>
+<div class="jumbotron">
+  <div class="container text-center">
+    <p id="confirmNumberPrint">
+    </p>
+  </div>
+</div><!--.jumbotron-->
+<div class="container">
+  <div class="row">
+    <div class="form-group col-xs-4 col-xs-offset-4">
+      <label>Sell:</label>
+      <input type="text" class="form-control" id="sell" placeholder="action not performed">
+      <label>Buy:</label>
+      <input type="text" class="form-control" id="buy" placeholder="action not performed">
+      <label>Exchange:</label>
+      <input type="text" class="form-control" id="exchange" placeholder="action not performed">
+      <label>Phone Number Change:</label>
+      <input type="text" class="form-control" id="phoneChange" placeholder="action not performed">
+      <label>Address Change:</label>
+      <input type="text" class="form-control" id="addressChange" placeholder="action not performed">
+      <label>Email Address Change:</label>
+      <input type="text" class="form-control" id="emailChange" placeholder="action not performed">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <label>Comments:</label>
+      <textarea class="form-control" id="additionalComments" placeholder="no comments"></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <br>
+    <a href="#shareholderID"><button type="submit" class="col-xs-offset-4 btn btn-default" id="submitButton">Submit</button></a>
+  </div>
+</div> <!--container closed-->
+<br>
+<div id="FAgenerator">
+  <div class="page-header">
+    <center><h1 id="financialAdvisorID">Financial Advisor Calls</h1></center>
+  </div>
+  <div class="jumbotron">
+    <div class="container text-center">
+      <div id="disapearAfterAnswered" class="col-lg-6 col-lg-offset-3">
+        <div class="input-group">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button" id="howManyClientsButton">Submit</button>
+          </span>
+          <input id="FAquestionBar" type="text" class="form-control" placeholder="How many clients will the Financial Advisor be working with today?">
+        </div>
+      </div>
+      <center>
+        <p id="FAconfirmNumberPrint" class="col-lg-8 col-lg-offset-2">
+        </p>
+      </center>
+    </div>
+  </div><!--.jumbotron-->
+  <div id="FAgeneratorBody" class="col-xs-4 col-xs-offset-4">
+    <label>Financial Advisor Phone Number Change:</label>
+    <input type="text" class="form-control" id="FAphoneChange" placeholder="action not performed">
+    <label>Financial Advisor Address Change:</label>
+    <input type="text" class="form-control" id="FAaddressChange" placeholder="action not performed">
+    <label>Financial Advisor Email Change:</label>
+    <input type="text" class="form-control" id="FAemailChange" placeholder="action not performed">
+    <label>Sell:</label>
+    <input type="text" class="form-control" id="Csell" placeholder="action not performed">
+    <div id="addText1">
+    </div>
+    <label>Buy:</label>
+    <input type="text" class="form-control" id="Cbuy" placeholder="action not performed">
+    <div id="addText2">
+    </div>
+    <label>Exchange:</label>
+    <input type="text" class="form-control" id="Cexchange" placeholder="action not performed">
+    <div id="addText3">
+    </div>
+    <label>Phone Number Change:</label>
+    <input type="text" class="form-control" id="CphoneChange" placeholder="action not performed">
+    <div id="addText4">
+    </div>
+    <label>Address Change:</label>
+    <input type="text" class="form-control" id="CaddressChange" placeholder="action not performed">
+    <div id="addText5">
+    </div>
+    <label>Email Address Change:</label>
+    <input type="text" class="form-control" id="CemailChange" placeholder="action not performed">
+    <div id="addText6">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <label>Comments:</label>
+      <textarea class="form-control" id="CadditionalComments" placeholder="no comments"></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-offset-4">
+    <br>
+    <a href="#financialAdvisorID"><button type="submit" class="btn btn-default" id="FAsubmitButton">Submit</button></a>
+    <button type="submit" class="btn btn-default" id="addClientButton">Add Client</button>
+  </div>
+</div><!--#FAgenerator closed-->
+<br>
+<div id="Advanced Search">
+  <div class="page-header">
+    <center><h1>Advanced Search</h1></center>
+  </div>
+  <div class="jumbotron">
+    <div class="container text-center">
+      </div>
+      <div class="container text-center">
+        <p id="advancedSearchResults">
+        </p>
+    </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="input-group">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" id="CNsearchButton">Search</button>
+        </span>
+        <input id="CNsearchBar" type="text" class="form-control" placeholder="search by Confirmation Number">
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row" >
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="input-group">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" id="WIRNsearchButton">Search</button>
+        </span>
+        <input id="WIRNsearchBar" type="text" class="form-control" placeholder="search by WIRN">
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="input-group">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" id="dateSearchButton">Search</button>
+        </span>
+        <input id="dateSearchBar" type="text" class="form-control" placeholder="search by Date (mm/dd/yyyy)">
+      </div>
+    </div>
+  </div>
+  <br>
+</div><!--end advanced search-->
+<br>
+<div id="Read-Me">
+  <div class="page-header">
+    <center><h1>Read Me</h1></center>
+  </div>
+  <div class="jumbotron">
+    <center><p>In order to test the program, you may need multiple work item reference numbers(WIRNs):</p></center>
+    <div class="container text-center">
+    <div id="WIRNprint"></div>
+    </div>
+    <br>
+    <center><button class="btn btn-default" type="button" id="WIRNgeneratorButton">Generate WIRNs</button></center>
+  </div>
+  <div class="page header">
+    <center><h1><small>WHY?</small></h1></center>
+  </div>
+  <br>
+  <div class="row">
+    <p class="col-sm-8 col-sm-offset-2">
+        This site is designed based on experiences from working as an associate at a major mutual fund company.
+      The major role I performed was receiving phone calls from shareholders and financial advisors to process
+      financial transactions. We used an internal website to process these actions, each of which generated a
+      nine digit number called a work item refrence number, or WIRN, that could be used to look of the transaction details.
+      Our calls were reviewed by an outside company to ensure quality and customer service. This outside company
+      required that a number be given to the caller for every transaction and change to a customer profile, so
+      they could refrence the action on potential callbacks if there were any problems.
+    </p>
+  </div>
+  <br>
+  <div class="row">
+    <p class="col-sm-8 col-sm-offset-2">
+        The biggest complaint of associates was the number of WIRNs we were providing. Because we verified phone
+      numbers, addresses and email addresses on every call to ensure we were able to contact shareholders if necessary,
+      often times a simple single transaction call would require up to five WIRNs. Providing numerous numbers increased
+      the number of potential mistakes, which effects an associates quality and therefore pay bonuses, and
+      severely lengthens the average duration of an associate's calls, which costs the company money. This site is
+      designed to be used in coordination with the company's processing site and to consolidate multiple WIRNs into
+      a single confirmation number, that could be used to refrence every WIRN, and therefore every processed action,
+      on any future callbacks.
+    </p>
+  </div>
+  <br>
+  <div class="page header">
+    <center><h1><small>WHAT?</small></h1></center>
+  </div>
+  <br>
+  <div class="row">
+    <p class="col-sm-8 col-sm-offset-2">
+        My WIRN consolidator site is devided into three major parts: Shareholder Calls, Financial Advisor Calls and
+      an Advanced Search section. The Shareholder and Financial Advisor sections allow for the input of WIRNs and upon
+      clicking the submit button produce a single confirmation number to be given to the caller. The confirmation numbers
+      are saved under that confirmation number and could be looked up later. The Advanced Search section provides
+      the ability to look up information by confirmation number, WIRN or date.
+    </p>
+  </div>
+  <br>
+  <div class="row">
+    <p class="col-sm-8 col-sm-offset-2">
+        The Shareholder section has multiple fields where WIRNs can be entered. The sell and buy fields are for the
+      two most common transactions a caller wants to process. The exchange field is for the movement of funds from
+      one to another mutual fund. There are also fields for telephone number, address and email address changes, these
+      are commonly used, because up to date contact information is important because federal requirement to deliver
+      financial statements. The comments section allows the ability to refrence more complex actions such as social security
+      number changes, joint account splits due to divorce or death, etc.
+    </p>
+  </div>
+  <br>
+  <div class="row">
+    <p class="col-sm-8 col-sm-offset-2">
+        The Financial Advisor section is similar to the Shareholder section with some key differences. Financial Advisors
+      often call to process transactions on multiple accounts because they are managing multiple client's finances. For this
+      purpose I have built in the ability to add multiple fields to the input areas where multiple clients would produce
+      multiple WIRNs. There are also sections for phone number changes, address changes and email address updates for the
+      financial advisors office, as well as a comments section.
+    </p>
+  </div>
+  <br>
+  <div class="row">
+    <p class="col-sm-8 col-sm-offset-2">
+        The Advanced Search section allows the user to search by confirmation number, WIRN and date. The confirmation
+      number search, which is also available as a quick search in the navigation bar at the top of the page,simple accepts
+      a confirmation number and return the WIRNs stored under it. The WIRN search accepts a WIRN and returns all other
+      WIRNs associated with that call. The date search accepts a date in mm/dd/yyyy format and returns all confirmation
+      numbers generated on that date.
+    </p>
+  </div>
+  <br>
+  <div class="page header">
+    <center><h1><small>HOW?</small></h1></center>
+  </div>
+  <br>
+  <div class="row">
+    <p class="col-sm-8 col-sm-offset-2">
+        The site uses basic HTML with the bootstrap CSS library rather than having a seprate CSS document for design.
+      Javascript is used for the functionality of the website. Because the site is not being hosted on a server the
+      data is being saved to a global object, thus refreshing the page will reopen the WIRN consolidator with an empty
+      object. I am most proud of the checking input lengths to verify the input WIRN is complete at nine digits, and
+      the checking to verify input WIRNs have not already been saved. These mechanisms use callback functions and
+      prevent mistakes like sloppy copy and pasting, and typos.
+    </p>
+  </div>
+  <br>
+  <div class="jumbotron">
+    <center><p><small>Thank you for taking a look! I'm excited to be interviewing with Hack reactor.
+      If you have any questions, comments or concerns contact me anytime at either colbyjanderson89@yahoo.com
+      or (916) 204-8990
+    </small></p></center>
+  </div>
+<script src="WIRNconsolidator.js"></script>
+</body>
+</html>
