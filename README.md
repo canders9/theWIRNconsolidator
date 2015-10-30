@@ -1,2 +1,21 @@
 # theWIRNconsolidator
 Admission project for Hack Reactor
+
+WHY?
+
+This site is designed based on experiences from working as an associate at a major mutual fund company. The major role I performed was receiving phone calls from shareholders and financial advisors to process financial transactions. We used an internal website to process these actions, each of which generated a nine digit number called a work item refrence number, or WIRN, that could be used to look of the transaction details. Our calls were reviewed by an outside company to ensure quality and customer service. This outside company required that a number be given to the caller for every transaction and change to a customer profile, so they could refrence the action on potential callbacks if there were any problems.
+
+The biggest complaint of associates was the number of WIRNs we were providing. Because we verified phone numbers, addresses and email addresses on every call to ensure we were able to contact shareholders if necessary, often times a simple single transaction call would require up to five WIRNs. Providing numerous numbers increased the number of potential mistakes, which effects an associates quality and therefore pay bonuses, and severely lengthens the average duration of an associate's calls, which costs the company money. This site is designed to be used in coordination with the company's processing site and to consolidate multiple WIRNs into a single confirmation number, that could be used to refrence every WIRN, and therefore every processed action, on any future callbacks.
+
+WHAT?
+
+My WIRN consolidator site is devided into three major parts: Shareholder Calls, Financial Advisor Calls and an Advanced Search section. The Shareholder and Financial Advisor sections allow for the input of WIRNs and upon clicking the submit button produce a single confirmation number to be given to the caller. The confirmation numbers are saved under that confirmation number and could be looked up later. The Advanced Search section provides the ability to look up information by confirmation number, WIRN or date.
+
+The Shareholder section has multiple fields where WIRNs can be entered. The sell and buy fields are for the two most common transactions a caller wants to process. The exchange field is for the movement of funds from one to another mutual fund. There are also fields for telephone number, address and email address changes, these are commonly used, because up to date contact information is important because federal requirement to deliver financial statements. The comments section allows the ability to refrence more complex actions such as social security number changes, joint account splits due to divorce or death, etc.
+The Financial Advisor section is similar to the Shareholder section with some key differences. Financial Advisors often call to process transactions on multiple accounts because they are managing multiple client's finances. For this purpose I have built in the ability to add multiple fields to the input areas where multiple clients would produce multiple WIRNs. There are also sections for phone number changes, address changes and email address updates for the financial advisors office, as well as a comments section.
+
+The Advanced Search section allows the user to search by confirmation number, WIRN and date. The confirmation number search, which is also available as a quick search in the navigation bar at the top of the page,simple accepts a confirmation number and return the WIRNs stored under it. The WIRN search accepts a WIRN and returns all other WIRNs associated with that call. The date search accepts a date in mm/dd/yyyy format and returns all confirmation numbers generated on that date.
+
+HOW?
+
+The site uses basic HTML with the bootstrap CSS library rather than having a seprate CSS document for design. Javascript is used for the functionality of the website. Because the site is not being hosted on a server the data is being saved to a global object, thus refreshing the page will reopen the WIRN consolidator with an empty object. I am most proud of the checking input lengths to verify the input WIRN is complete at nine digits, and the checking to verify input WIRNs have not already been saved. These mechanisms use callback functions and prevent mistakes like sloppy copy and pasting, and typos.
